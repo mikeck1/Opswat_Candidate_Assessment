@@ -20,7 +20,6 @@
 
 chmod 777 installNode.sh
 ./installNode.sh
-# npm install (if you already have node)
 ```
 
 ## Testing
