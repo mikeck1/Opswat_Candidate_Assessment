@@ -3,13 +3,13 @@
 
 # `Opswat_Candidate_Assessment`
 
-#### Add an environment Variable for API Key
+## Add an environment Variable for API Key
 ```bash
 .env
 > API_KEY=12345678910
 ```
 
-#### Installation for Ubuntu VM
+## Installation for Ubuntu VM
 ```bash
 # Tested on:
 
@@ -23,13 +23,13 @@ chmod 777 installNode.sh
 # npm install (if you already have node)
 ```
 
-#### Testing
+## Testing
 ```bash
 # npm install (if you did not use installNode script)
 npm test
 ```
 
-#### Run
+## Run
 ```bash
 # node index.js fileToScan
 node upload_file.js tests/data/hi2.txt 
@@ -37,7 +37,7 @@ node upload_file.js tests/data/hi2.txt
 npm start tests/data/hi2.txt 
 ```
 
-#### Dependencies 
+## Dependencies 
 
 | dependency | README |
 | ------ | ------ |
@@ -48,5 +48,5 @@ npm start tests/data/hi2.txt
 | mocha-sinon | https://sinonjs.org/ |
 | sinon | https://sinonjs.org/ |
 
-#### Author
+## Author
 Mike Kaufman
