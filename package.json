@@ -1,0 +1,21 @@
+{
+    "name": "opswat",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "test": "mocha --inline-diffs 'tests/*test.js'"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "axios": "^0.21.1",
+        "chai": "^4.3.4",
+        "dotenv": "^8.2.0",
+        "mocha": "^8.3.2",
+        "mocha-sinon": "^2.1.2",
+        "prompt": "^1.1.0",
+        "sinon": "^10.0.0"
+    }
+}
