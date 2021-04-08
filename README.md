@@ -32,9 +32,9 @@ npm test
 #### Run
 ```bash
 # node index.js fileToScan
-node upload_file.js tests/hi2.txt 
+node upload_file.js tests/data/hi2.txt 
 # OR
-npm start tests/hi2.txt 
+npm start tests/data/hi2.txt 
 ```
 
 #### Dependencies 

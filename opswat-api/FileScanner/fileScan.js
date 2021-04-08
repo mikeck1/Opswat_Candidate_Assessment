@@ -15,18 +15,19 @@ const { getScanByHash, getScanByDataID, uploadFile } = require('../api/opswat');
  */
 
 
-const fileScan = async (fileBuffer, fileName) => {
+const fileScan = async (fileBuffer, fileName, debug = false) => {
     const hash = crypto.createHash('md5').update(fileBuffer).digest('hex');         // Create File Hash
 
     try {
         const res = await getScanByHash(hash);                                      // Check if hash has been scanned before
         const { scan_results } = res.data;                                          // Get results
-        printScan(scan_results, fileName);                                          // Display cached results
-        return;
+        return printScan(scan_results, fileName, debug);                                          // Display cached results
     } catch (err) {                                                                 // Cache DNE so continue, otherwise log error and return
         if (err.response && err.response.status !== 404)
-            console.log(err);
-
+        {
+            console.log(err.response.status+": "+err.response.statusText);
+            return;
+        }
     }
 
     /* SCAN FILE */
@@ -40,8 +41,7 @@ const fileScan = async (fileBuffer, fileName) => {
                 if (resByDataId.data.scan_results.progress_percentage === 100) {   // Check if file done scanning
                     const { scan_results } = resByDataId.data;
 
-                    printScan(scan_results, fileName);                              // Display results
-                    clearInterval(intervalId);                                      // Success: return immediately
+                    return printScan(scan_results, fileName, debug);                              // Display results
                 }
 
             } catch (err) {
@@ -50,7 +50,7 @@ const fileScan = async (fileBuffer, fileName) => {
             }
         }, 1000);
     } catch (err) {
-        console.log(err);
+        console.log(err.response.status+": "+err.response.statusText);
     }
 
 };
