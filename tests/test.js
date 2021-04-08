@@ -73,9 +73,14 @@ describe('testing fileScan', () => {
         this.sinon.stub(console, 'log');
     });
     it('can get scan report from known file', async () => {
-        const res = await fileScan(fileBuffer,fileName, debug = true);              // Check if hash has been scanned before                                       // Get results
+        const res = await fileScan(fileBuffer,fileName, debug = true);                  // Check if hash has been scanned before                                       // Get results
         expect(res).equal(testResult);
     });
+
+
+
+
+    
     // it('can get scan report from unknown file', async () => {
     //     const fileName = "fileThatChanges.txt";                                                          // Sample test input (already scanned file)
     //     // let randomString = Math.random().toString(36).substring(7);
