@@ -25,7 +25,8 @@ chmod 777 installNode.sh
 
 ## Testing
 ```bash
-# npm install (if you did not use installNode script)
+
+# npm install ## (if you did not use installNode script)
 npm test
 ```
 
