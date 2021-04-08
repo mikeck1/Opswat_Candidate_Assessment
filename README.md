@@ -39,12 +39,12 @@ node index.js tests/hi2.txt
 
 | dependency | README |
 | ------ | ------ |
-| axios | [https://www.npmjs.com/package/axios] |
-| chai | [https://www.chaijs.com/api/bdd/] |
-| dotenv | [https://www.npmjs.com/package/dotenv] |
-| mocha | [https://mochajs.org/] |
-| mocha-sinon | [https://sinonjs.org/] |
-| sinon | [https://sinonjs.org/] |
+| axios | https://www.npmjs.com/package/axios |
+| chai | https://www.chaijs.com/api/bdd/ |
+| dotenv | https://www.npmjs.com/package/dotenv |
+| mocha | https://mochajs.org/ |
+| mocha-sinon | https://sinonjs.org/ |
+| sinon | https://sinonjs.org/ |
 
 #### Author
 Mike Kaufman
