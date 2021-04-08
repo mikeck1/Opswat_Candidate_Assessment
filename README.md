@@ -9,7 +9,7 @@
 > API_KEY=12345678910
 ```
 
-#### Installation
+#### Installation for Ubuntu VM
 ```bash
 # Tested on:
 
