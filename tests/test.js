@@ -60,9 +60,9 @@ describe('testing getScanByID ', () => {
         this.sinon.stub(console, 'log');
     });
     it('can get scan report by id', async () => {
-        const id = "bzIxMDQwOE1HZXBoN2RkazFfOTdidFdJX2Y";
+        const id = "bzIxMDQwOE1HZXBoN2RkazFfOTdidFdJX2Y";                           // ID for hi2.txt
         await test(getScanByDataID, id);
-        expect(console.log.calledWith(0 + "")).to.be.true;
+        expect(console.log.calledWith(0 + "")).to.be.true;                          // Difference in reports should be 0
     });
 });
 
@@ -73,34 +73,12 @@ describe('testing fileScan', () => {
         this.sinon.stub(console, 'log');
     });
     it('can get scan report from known file', async () => {
-        const res = await fileScan(fileBuffer,fileName, debug = true);                  // Check if hash has been scanned before                                       // Get results
-        expect(res).equal(testResult);
+        const res = await fileScan(fileBuffer,fileName, debug = true);                  
+        expect(res).equal(testResult);                                              // Difference in reports should be 0
     });
-
-
-
-
-    
-    // it('can get scan report from unknown file', async () => {
-    //     const fileName = "fileThatChanges.txt";                                                          // Sample test input (already scanned file)
-    //     // let randomString = Math.random().toString(36).substring(7);
-    //     // fs.appendFileSync(fileName, randomString);
-    //     const filePath = path.join(path.dirname(__filename), "data/"+fileName)
-    //     const fileBuffer = fs.readFileSync(filePath)
-    //     const res = await fileScan(fileBuffer,fileName, debug = true);              // Check if hash has been scanned before   
-    //     const correctTextCount = 3355;                                    // Get results
-    //     expect(res.length).equal(correctTextCount);
-    // });
+    it('can get scan report from unknown file', async () => {
+        let randomString = Math.random().toString(36)+Math.random().toString(36);
+        const res = await fileScan(randomString,fileName, debug = true);                  
+        expect(res).equal(undefined);                                               // Should not return error code
+    });
 });
-
-// setTimeout(function(){
-//     changeFile();
-// }, 6000);
-
-// const changeFile = async () => {
-//     setTimeout(function(){
-//         const fileName = "fileThatChanges.txt";                                                          // Sample test input (already scanned file)
-//         let randomString = Math.random().toString(36).substring(7);
-//         fs.appendFileSync("tests/data/"+fileName, randomString);
-//     }, 1000);
-// }
