@@ -22,7 +22,7 @@
 # Release:        20.04
 # Codename:       focal
 
-chmod 777 scripts/installNode.sh 
+chmod 770 scripts/installNode.sh 
 ./scripts/installNode.sh 
 ```
 
