@@ -5,6 +5,10 @@
 
 ## Add an environment Variable for API Key
 ```bash
+# Create a file called .env
+# Write one line like below (update to your API key)
+# API_KEY=someAPIKey
+
 .env
 > API_KEY=12345678910
 ```
