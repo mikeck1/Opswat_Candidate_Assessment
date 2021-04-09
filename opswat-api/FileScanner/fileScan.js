@@ -33,7 +33,6 @@ const fileScan = async (fileBuffer, fileName, debug = false) => {
     try {
         
         const { data_id } = (await uploadFile(fileBuffer, fileName)).data;          // Upload File and scan
-        console.log(data_id);
         const intervalId = setInterval(async () => {
             try {
                 const resByDataId = await getScanByDataID(data_id);                 // Check every 1 seconds by id, see if file done scanning
